@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 from __future__ import unicode_literals
 from django.http import HttpResponse
 from django.conf import settings
@@ -6,10 +7,44 @@ from StringIO import StringIO
 from xlwt import *
 import os
 from django.shortcuts import render, render_to_response
+from django import forms
 
 from django.shortcuts import render
 
 # Create your views here.
+
+def view_report_xs_column(request):
+    cur = settings.MSCONN.cursor()
+    cur.execute('select e.name as comname,sum(a.c_number * a.c_price)/10000  as money '
+                'from retail_list_dtl a '
+                'left join retail_list b on a.c_retailcode=b.c_retailcode '
+                'left join st_storage  c on a.c_deptcode = c.id '
+                'left join st_company  e on c.belong_comid = e.id '
+                'where e.name is not null '
+                'group by e.name')
+    list_tim = dictfetchall(cur)
+    return render_to_response('report/reportview_xs_column.html', {'xslist': list_tim})
+
+def view_report_xs_charts(request):
+    cur = settings.MSCONN.cursor()
+    cur.execute('select e.name as comname,cast(sum(a.c_number * a.c_price) as varchar) as money '
+                'from retail_list_dtl a '
+                'left join retail_list b on a.c_retailcode=b.c_retailcode '
+                'left join st_storage  c on a.c_deptcode = c.id '
+                'left join st_company  e on c.belong_comid = e.id '
+                'group by e.name')
+    list_tim = dictfetchall(cur)
+    return render_to_response('report/reportview_xs_charts.html', {'xslist': list_tim})
+
+
+def view_report_xs(request):
+    cur = settings.MSCONN.cursor()
+    cur.execute('select b.c_selldeptname as deptname,sum(a.c_number * a.c_price) as money ' +
+                'from retail_list_dtl a '
+                'left join retail_list b on a.c_retailcode=b.c_retailcode '
+                'group by b.c_selldeptname')
+    list_tim = dictfetchall(cur)
+    return render_to_response('report/reportview_xs.html', {'xslist': list_tim})
 
 
 def view_report(request):
