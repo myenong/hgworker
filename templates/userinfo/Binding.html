@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="/static/css/main.css"/> -->
+    <title>绑定汉高ERP验证</title>
+	<!--<link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui-for-work.css"> -->
+    <script>
+    function checkA(obj) {
+    var str = obj.value;
+    if(str != null && str != "") {
+     document.all.sub.disabled = "";
+    } else {
+     document.all.sub.disabled = "disabled";
+    } }
+    </script>
+</head>
+
+<body>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form method="post" action="http://www.doctorglasses.com.cn:9632/userinfo/binding/">
+                {% csrf_token %}
+                <label for="usernameInput">企业微信帐号：</label>{{ userid }}
+                <input type="hidden" name="userid" value={{ userid }}>
+                <div class="form-group">
+                    <label for="usernameInput">汉高帐号</label>
+                    <input type="text" name="username" class="form-control" id="username" onchange="checkA(this)">
+                </div>
+                <div class="form-group">
+                    <label for="InputPassword1">密码</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                </div>
+                <!--<button type="submit" class="btn btn-default">绑定</button> -->
+                <button id="sub" type="submit" class="btn btn-lg btn-success" disabled="disabled">绑定帐号</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

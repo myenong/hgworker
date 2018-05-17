@@ -1,0 +1,35 @@
+
+if not exists (select * from dbo.sysobjects where id = object_id(N'[dbo].wx_usermap'))
+BEGIN
+CREATE TABLE [dbo].[wx_usermap](
+	[id] [uniqueidentifier] ROWGUIDCOL  NOT NULL CONSTRAINT [DF_wx_usermap_id]  DEFAULT (newid()),
+	[hguserid] [varchar](20) COLLATE Chinese_PRC_CI_AS NOT NULL,
+	[hgaccountid] [varchar](20) COLLATE Chinese_PRC_CI_AS NULL,
+	[wxuserid] [varchar](20) COLLATE Chinese_PRC_CI_AS NULL,
+	[createdate] [datetime] NULL
+) ON [PRIMARY]
+
+END
+GO
+
+--折扣表
+if not exists (select * from dbo.sysobjects where id = object_id(N'[dbo].wx_discount'))
+BEGIN
+CREATE TABLE [dbo].[wx_discount](
+	[id] [uniqueidentifier] ROWGUIDCOL  NOT NULL CONSTRAINT [DF_wx_zk_id]  DEFAULT (newid()),
+	[mode] [int],--折扣类型 0按单折扣 1按商品类别折扣
+	[ratio] [int],--折扣率0-100整数
+        [discountcode] [varchar](20) COLLATE Chinese_PRC_CI_AS NULL,--折扣码
+        [classid] [varchar](20) COLLATE Chinese_PRC_CI_AS NULL,--类别代码
+        [hguserid] [varchar](20) COLLATE Chinese_PRC_CI_AS NOT NULL,--汉高用户名（发券人）
+	[wxuserid] [varchar](20) COLLATE Chinese_PRC_CI_AS NULL,
+        [clientcode] [varchar](20),--使用券的客户代码（使用后回填）
+        [sell_man] [char](6),--销售员代码（使用后回填）
+        [check_man] [char](6),
+	[createdate] [datetime] NULL,--发券时间
+        [userdate] [datetime] NULL,--使用时间（使用后回填）
+        [userflag] [int]--使用标志  0未使用 1已经使用（使用后回填）
+) ON [PRIMARY]
+
+END
+GO

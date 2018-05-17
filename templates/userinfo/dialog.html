@@ -1,0 +1,42 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1.0" />  
+<title>对话框</title>
+<link rel="stylesheet" type="text/css" href="/static/css/mdialog.css">
+<style type="text/css">
+	input{
+		width: 70px;
+		height:20px;
+		margin:100px auto;
+	}
+</style>
+</head>
+<body>
+<script type="text/javascript" src="{% static "/js/zepto.min.js" %}"></script>
+<script type="text/javascript" src="{% static "/js/mdialog.js" %}"></script>
+<script type="text/javascript">
+    var type = "{{ type }}";
+    var msg = "{{ msg }}";
+	 //成功
+    if (type == "success") {
+        new TipBox({type:'success',str:msg,hasBtn:true});
+    }
+    //错误
+    if (type == "error") new TipBox({type:'error',str:msg,hasBtn:true});
+    //提示
+    if (type == "tip") new TipBox({type:'tip',str:msg,clickDomCancel:true,setTime:10000500,hasBtn:true});
+    //加载
+    //$('#type').prepend(List[0]);
+    //$("#load").click(function(){
+    //    new TipBox({type:'load',str:"努力加载中..",setTime:1500,callBack:function(){
+    //        new TipBox({type:'success',str:'操作成功',hasBtn:true});
+    //    }});
+    //});
+    //
+    parent.WeixinJSBridge.call('closeWindow');
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta name="format-detection" content="telephone=no" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="/static/css/main.css"/> -->
+    <title>生成折扣券</title>
+	<!--<link rel="stylesheet" type="text/css" href="https://res.wx.qq.com/open/libs/weui/1.1.2/weui-for-work.css"> -->
+    <script>
+    function checkA(obj) {
+    var str = obj.value;
+    if(str != null && str != "") {
+     document.all.sub.disabled = "";
+    } else {
+     document.all.sub.disabled = "disabled";
+    } }
+    </script>
+</head>
+<body>
+<div class="hero-unit" align="center">
+  <h1></h1>
+</div>
+<form method="post" action="http://www.doctorglasses.com.cn:9632/userinfo/discount/">
+<div class="container-fluid" id="XS">
+	<div class="row-fluid">
+		<div class="span12">
+			<div class="jumbotron well">
+				<h1>
+					生成折扣券
+				</h1>
+				<p class="lead">
+					<span class="badge">1</span>不选择商品类别默认为按单折扣。按单折扣或者按商品类别折扣, 然后，
+                    <span class="badge">2</span>点击按钮生成折扣二维码后，通过右上角菜单发送给需要折扣的使用者。
+				</p>
+				<p>
+                <input type="hidden" name="userid" value={{ userid }}>
+                <select name="class" style="width:240px;height:40px;">
+                     {%for class in classlist %}
+                         <option value="{{ class.classid }}">{{class.name}}</option>
+                     {%endfor%}
+                    <option value="" selected="selected">请选择类别</option>
+                </select>
+                <input type="hidden" name="userid" value="{{ userid }}">
+                <div class="form-group">
+                    <label for="discountInput">折扣额度（1-100）%</label>
+                    <input type="tel" name="discount" class="form-control" id="discountInput" onchange="checkA(this)"  onkeyup="value=value.replace(/[^\d]/g,'')" style="width:120px;" maxlength="2">
+                </div>
+                    <button id="sub" type="submit" class="btn btn-lg btn-success">生成折扣码</button>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</form>
+</body>
+</html>
