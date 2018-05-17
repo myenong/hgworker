@@ -19,7 +19,6 @@ def view_report_xs_column(request):
                 'from retail_list_dtl a '
                 'left join retail_list b on a.c_retailcode=b.c_retailcode '
                 'left join st_company  e on b.belong_comid = e.id '
-                'where e.name is not null '
                 'group by e.name')
     list_tim = dictfetchall(cur)
     return render_to_response('report/reportview_xs_column.html', {'xslist': list_tim})
