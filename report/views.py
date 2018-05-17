@@ -18,7 +18,6 @@ def view_report_xs_column(request):
     cur.execute('select e.name as comname,cast(round(sum(a.c_number * a.c_price)/10000,2)as  numeric(12,2)) as money '
                 'from retail_list_dtl a '
                 'left join retail_list b on a.c_retailcode=b.c_retailcode '
-                'left join st_storage  c on a.c_deptcode = c.id '
                 'left join st_company  e on b.belong_comid = e.id '
                 'where e.name is not null '
                 'group by e.name')
@@ -30,7 +29,6 @@ def view_report_xs_charts(request):
     cur.execute('select e.name as comname,cast(round(sum(a.c_number * a.c_price),2)as  numeric(12,2)) as money '
                 'from retail_list_dtl a '
                 'left join retail_list b on a.c_retailcode=b.c_retailcode '
-                'left join st_storage  c on a.c_deptcode = c.id '
                 'left join st_company  e on b.belong_comid = e.id '
                 'group by e.name')
     list_tim = dictfetchall(cur)
