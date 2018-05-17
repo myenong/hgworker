@@ -46,7 +46,7 @@
         <entry file="file://$PROJECT_DIR$/report/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <element signature="e#25#64#0" expanded="true" />
                 <marker date="1526538340022" expanded="true" signature="428:827" placeholder="select e.nam... retail_list_dtl" />
@@ -58,14 +58,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/report/urls.py">
+      <file leaf-file-name="discount.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/discount/discount.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39310345">
-              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-              <folding>
-                <element signature="e#24#65#0" expanded="true" />
-              </folding>
+            <state vertical-scroll-proportion="0.517934">
+              <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,6 +95,9 @@
         <option value="$PROJECT_DIR$/report/cust_xls.py" />
         <option value="$PROJECT_DIR$/report/views.py" />
         <option value="$PROJECT_DIR$/report/urls.py" />
+        <option value="$PROJECT_DIR$/templates/report/reportview_xs.html" />
+        <option value="$PROJECT_DIR$/templates/report/reportview_xs_charts.html" />
+        <option value="$PROJECT_DIR$/templates/report/reportview_xs_column.html" />
       </list>
     </option>
   </component>
@@ -185,6 +186,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="report" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hgworker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hgworker" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="discount" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -531,41 +550,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/userinfo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="192" column="16" selection-start-line="192" selection-start-column="16" selection-end-line="192" selection-end-column="16" />
-          <folding>
-            <element signature="e#23#36#0" expanded="true" />
-            <marker date="1522228861201" expanded="true" signature="723:777" placeholder="select top 1... " />
-            <marker date="1522228861201" expanded="true" signature="2738:2796" placeholder="select class... " />
-            <marker date="1522228861201" expanded="true" signature="3402:3474" placeholder="select top 1... " />
-            <marker date="1522228861201" expanded="true" signature="3402:3487" placeholder="select top 1... " />
-            <marker date="1522228861201" expanded="true" signature="3402:3488" placeholder="select top 1... " />
-            <marker date="1522228861201" expanded="true" signature="3926:3990" placeholder="select top 1... " />
-            <marker date="1522228861201" expanded="true" signature="4396:4418" placeholder="INSERT INTO wx_usermap... " />
-            <marker date="1522228861201" expanded="true" signature="4396:4459" placeholder="INSERT INTO wx_usermap... " />
-            <marker date="1522228861201" expanded="true" signature="4396:4470" placeholder="INSERT INTO &quot;wx_usermap&quot;... " />
-            <marker date="1522228861201" expanded="true" signature="5279:5352" placeholder="select top 1... " />
-            <marker date="1522228861201" expanded="true" signature="5761:5836" placeholder="INSERT INTO wx_discount... " />
-            <marker date="1522228861201" expanded="true" signature="5761:5846" placeholder="INSERT INTO wx_discount... " />
-            <marker date="1522228861201" expanded="true" signature="5761:5853" placeholder="INSERT INTO wx_discount... " />
-            <marker date="1522228861201" expanded="true" signature="5761:5859" placeholder="INSERT INTO wx_discount... " />
-            <marker date="1522228861201" expanded="true" signature="5761:5862" placeholder="INSERT INTO wx_discount... " />
-            <marker date="1522228861201" expanded="true" signature="6243:6285" placeholder="select class... " />
-            <marker date="1522228861201" expanded="true" signature="6243:6301" placeholder="select class... " />
-            <marker date="1522228861201" expanded="true" signature="6757:6815" placeholder="select class... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/userinfo/classlist.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/userinfo/dialog.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -823,13 +807,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/discount/discount.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://E:/Python27/Lib/site-packages/django/shortcuts.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.026206896">
@@ -943,24 +920,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/report/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/report/reportview_xs_column.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#25#64#0" expanded="true" />
-            <marker date="1526538340022" expanded="true" signature="428:827" placeholder="select e.nam... retail_list_dtl" />
-            <marker date="1526538340022" expanded="true" signature="1040:1405" placeholder="select e.nam... retail_list_dtl" />
-            <marker date="1526538340022" expanded="true" signature="2044:2102" placeholder="select class... " />
-            <marker date="1526538340022" expanded="true" signature="2480:2512" placeholder="select * fro... " />
-          </folding>
+        <state vertical-scroll-proportion="0.65423244">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/report/reportview_xs_charts.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65423244">
+          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/report/reportview_xs.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.8177905">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.7087518">
+          <caret line="53" column="6" selection-start-line="53" selection-start-column="6" selection-end-line="53" selection-end-column="6" />
           <folding />
         </state>
       </provider>
@@ -972,6 +951,28 @@
           <folding>
             <element signature="e#24#65#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/report/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="e#25#64#0" expanded="true" />
+            <marker date="1526538340022" expanded="true" signature="428:827" placeholder="select e.nam... retail_list_dtl" />
+            <marker date="1526538340022" expanded="true" signature="1040:1405" placeholder="select e.nam... retail_list_dtl" />
+            <marker date="1526538340022" expanded="true" signature="2044:2102" placeholder="select class... " />
+            <marker date="1526538340022" expanded="true" signature="2480:2512" placeholder="select * fro... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/discount/discount.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.517934">
+          <caret line="46" column="40" selection-start-line="46" selection-start-column="40" selection-end-line="46" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
