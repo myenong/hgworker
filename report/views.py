@@ -35,10 +35,26 @@ def view_report_xs_charts(request):
 
 
 def view_report_xs(request):
+    s_type = request.GET.get('type')
     cur = settings.MSCONN.cursor()
-    cur.execute('select b.c_selldeptname as deptname,cast(round(sum(a.c_number * a.c_price),2)as  numeric(12,2)) as money  ' +
+    print s_type
+    if s_type == 'month':
+        cur.execute('select b.c_selldeptname as deptname,cast(round(sum(a.c_number * a.c_price),2)as  numeric(12,2)) as money  ' +
+                    'from retail_list_dtl a '
+                    'left join retail_list b on a.c_retailcode=b.c_retailcode '
+                    'where year(c_take)+month(c_take) = YEAR(GETDATE())+MONTH(GETDATE())'
+                    'group by b.c_selldeptname')
+    elif s_type == 'year':
+        cur.execute('select b.c_selldeptname as deptname,cast(round(sum(a.c_number * a.c_price),2)as  numeric(12,2)) as money  ' +
                 'from retail_list_dtl a '
                 'left join retail_list b on a.c_retailcode=b.c_retailcode '
+                'where year(c_take) = YEAR(GETDATE())'
+                'group by b.c_selldeptname')
+    else:
+        cur.execute('select b.c_selldeptname as deptname,cast(round(sum(a.c_number * a.c_price),2)as  numeric(12,2)) as money  ' +
+                'from retail_list_dtl a '
+                'left join retail_list b on a.c_retailcode=b.c_retailcode '
+                'where year(c_take)+month(c_take)+day(c_take) = YEAR(GETDATE())+MONTH(GETDATE())+DAY(GETDATE())'
                 'group by b.c_selldeptname')
     list_tim = dictfetchall(cur)
     return render_to_response('report/reportview_xs.html', {'xslist': list_tim})
